@@ -1,0 +1,26 @@
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: initial;
+
+}
+
+/*root*/
+html {
+    //this defined what 1 rem is
+    font-size: 62.5%;
+}
+
+
+body{
+    
+    /*the padding + border are part of the width/height
+     - only if padding is > 2*width then the element will grow
+     - if not set, padding + border are not part of the width/height and are added to it
+     - so  width + padding + border = actual width of an element*/
+     box-sizing: border-box;
+}
