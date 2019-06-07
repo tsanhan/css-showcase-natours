@@ -11,6 +11,12 @@
     clip-path: polygon(0 0,100% 0,100% 80%, 0 100%);
     position: relative; /*this is for the absulute positioning in .logo-box*/
 
+    @include respond(phone) {
+        clip-path: polygon(0 0,100% 0,100% 85vh, 0 100%);
+        -webkit-clip-path: polygon(0 0,100% 0,100% 85vh, 0 100%);
+
+    }
+
     &__logo-box {
         position: absolute; /*relative to the 'relative' positioned parent*/
         top: 4rem;

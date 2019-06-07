@@ -9,10 +9,30 @@
 
 }
 
+html, body {
+    overflow-x: hidden; 
+}
 /*root*/
 html {
+
     //this defined what 1 rem is
-    font-size: 62.5%;
+    font-size: 62.5%; //I want: 1rem = 10px; so 10px/16px = 62.5%
+
+    @include respond(tab-land) { //width < 1200 ?
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) { //width < 900 ?
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+
+    // @include respond(phone) { //width < 600 ?
+    //     font-size: 30%; // 1rem = 8px, 8/16 = 50%
+    // }
+    
+    @include respond(big-desktop) {
+        font-size: 75%;// 1rem = 12px, 12/16 = 75‬%
+    }
 }
 
 
@@ -23,4 +43,9 @@ body{
      - if not set, padding + border are not part of the width/height and are added to it
      - so  width + padding + border = actual width of an element*/
      box-sizing: border-box;
+     padding: 3rem; 
+
+     @include respond(tab-port) { //width < 900 ?
+        padding: 0;
+    }
 }
